@@ -1,7 +1,7 @@
 <template>
 <div class="row m-2">
-  <div class="col text-center">
-      <ul class="list-group p-0 font-weight-bold shadow">
+  <div class="col text-center p-1">
+      <ul class="list-group p-0 font-weight-bold shadow container">
         <li class="list-group-item bg-success font-weight-bold"><a @click="flag = !flag">{{user.name}}</a></li>
         <li class="list-group-item ">Username: {{user.username}}</li>
         <li class="list-group-item ">Email: {{user.email}}</li>
@@ -11,10 +11,11 @@
         <li class="list-group-item ">Company: {{user.company.name}}</li>
       </ul>
   </div>
-
-  <div v-if="flag" class="col-sm-7">
-      <div  class="container-fluid" style="top:3rem"><Posts v-bind:userId="user.id"/></div>
+  <transition name="fade">
+  <div v-if="flag" class="col-sm-12 col-lg-7 p-1">
+     <Posts v-bind:userId="user.id"/>
     </div>
+  </transition>
   </div>
 
 </template>
@@ -59,5 +60,11 @@ h3 {
 }
 a:hover{
   cursor: pointer;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

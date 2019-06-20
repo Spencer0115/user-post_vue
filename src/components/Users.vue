@@ -2,6 +2,7 @@
   <div class="text-left container justify-content-center">
     <div class="container-fluid" v-bind:key="user.id" v-for="user in users">
       <User v-bind:user="user"/>  
+      <hr>
   </div>
   </div>
 </template>

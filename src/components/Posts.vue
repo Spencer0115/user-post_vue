@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container-fluid">
     <div v-bind:key="post.id" v-for="post in posts">
         <Post v-bind:post="post"/>
     </div>
