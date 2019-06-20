@@ -1,8 +1,8 @@
 <template>
-  <div class="text-left row ">
-    <div class="col-sm-4 " v-bind:key="user.id" v-for="user in users">
-        <User v-bind:user="user"/>
-    </div>
+  <div class="text-left container justify-content-center">
+    <div class="container-fluid" v-bind:key="user.id" v-for="user in users">
+      <User v-bind:user="user"/>  
+  </div>
   </div>
 </template>
 

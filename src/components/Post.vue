@@ -1,7 +1,9 @@
 <template>
-  <div class="card p-0"> 
-    <div class="card-title bg-primary p-2 m-0 font-weight-bold"><a @click="flag = !flag">{{post.title}}</a></div>
+  <div class="card p-0 border-0 shadow"> 
+    <div class="card-title bg-primary p-2 m-0 font-weight-bold"><a v-on:click="flag = !flag">{{post.title}}</a></div>
+    <transition name="fade">
     <div v-if="flag" class="card-body bg-light p-2 m-0"><p>{{post.body}}</p></div>
+    </transition>
   </div>
 </template>
 
@@ -29,6 +31,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 h3 {
   margin: 40px 0 0;
 }

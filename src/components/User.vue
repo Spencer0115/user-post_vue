@@ -1,18 +1,22 @@
 <template>
-  <div class="card p-0">
-    <div class="card-title m-0 p-2 bg-dark text-success">
-      <h4><a @click="flag = !flag">{{user.username}}</a></h4>
-    </div>
-
-    <div class="card-body p-0 m-0">
-      <ul class="list-group p-0 col">
-        <li class="list-group-item border-0">{{user.name}}</li>
-        <li class="list-group-item border-0">{{user.email}}</li>
-        <li class="list-group-item border-0">{{user.street}}</li>
-        <li  v-if="flag" class="list-group-item border-0"><Posts v-bind:userId="user.id"/></li>
+<div class="row m-2">
+  <div class="col text-center">
+      <ul class="list-group p-0 font-weight-bold shadow">
+        <li class="list-group-item bg-dark text-success font-weight-bold"><a @click="flag = !flag"><h5>{{user.username}}</h5></a></li>
+        <li class="list-group-item ">Name: {{user.name}}</li>
+        <li class="list-group-item ">Email: {{user.email}}</li>
+        <li class="list-group-item ">Address: {{user.address.street}}</li>
+        <li class="list-group-item ">Phone: {{user.phone}}</li>
+        <li class="list-group-item ">Website: {{user.website}}</li>
+        <li class="list-group-item ">Company: {{user.company.name}}</li>
       </ul>
+  </div>
+
+  <div v-if="flag" class="col-sm-7">
+      <div  class="container-fluid" style="top:3rem"><Posts v-bind:userId="user.id"/></div>
     </div>
-</div>
+  </div>
+
 </template>
 
 <script>
