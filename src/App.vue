@@ -1,17 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container-fluid">
+      <Users v-bind:users="users"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Users from './components/Users.vue';
+import axios from 'axios'//import aixos to access data from apis
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Users
+  },
+  data(){
+    return {
+      users : []
+    }
+  },
+  methods:{
+    showPost(){
+
+    }
+  },
+  created(){
+    axios.get("https://jsonplaceholder.typicode.com/users")
+    .then(res=>{
+      this.users = res.data;
+    })
+    .catch(error=>console.log(error));
   }
 }
 </script>
