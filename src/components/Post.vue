@@ -1,6 +1,6 @@
 <template>
   <div class="card p-0 border-0 shadow"> 
-    <div class="card-title bg-primary p-2 m-0 font-weight-bold"><a v-on:click="flag = !flag">{{post.title}}</a></div>
+    <div class="card-title bg-success p-2 m-0 font-weight-bold"><a v-on:click="flag = !flag">{{post.title}}</a></div>
     <transition name="fade">
     <div v-if="flag" class="card-body bg-light p-2 m-0"><p>{{post.body}}</p></div>
     </transition>

@@ -2,8 +2,8 @@
 <div class="row m-2">
   <div class="col text-center">
       <ul class="list-group p-0 font-weight-bold shadow">
-        <li class="list-group-item bg-dark text-success font-weight-bold"><a @click="flag = !flag"><h5>{{user.username}}</h5></a></li>
-        <li class="list-group-item ">Name: {{user.name}}</li>
+        <li class="list-group-item bg-success font-weight-bold"><a @click="flag = !flag">{{user.name}}</a></li>
+        <li class="list-group-item ">Username: {{user.username}}</li>
         <li class="list-group-item ">Email: {{user.email}}</li>
         <li class="list-group-item ">Address: {{user.address.street}}</li>
         <li class="list-group-item ">Phone: {{user.phone}}</li>
